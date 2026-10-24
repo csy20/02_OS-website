@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>02_OS — public alpha</title>
+    <meta
+      name="description"
+      content="02_OS is an agent-native developer operating system. Public alpha, not a production operating system."
+    />
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta property="og:title" content="02_OS" />
+    <meta
+      property="og:description"
+      content="An agent-native developer operating system. Public alpha."
+    />
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href="#top">
+        <img src="assets/logo.svg" alt="" width="36" height="33" />
+        <span>02_OS</span>
+      </a>
+      <nav>
+        <a href="#desktop">Desktop</a>
+        <a href="#try">Try it</a>
+        <a href="https://github.com/csy20/02_OS">Source</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="pill">Public alpha</p>
+        <h1>An operating system for the agent working in the repo.</h1>
+        <p class="lede">
+          02_OS pairs a GNOME desktop with a local repository runtime. The
+          runtime reads the tree, the git history, and the symbols, then hands
+          a coding agent a bounded evidence package. Nothing in that path
+          requires an account or a cloud model.
+        </p>
+        <div class="actions">
+          <a class="button" href="https://github.com/csy20/02_OS/releases/tag/v2026.10.24">
+            Download v2026.10.24
+          </a>
+          <a class="button quiet" href="https://github.com/csy20/02_OS">
+            GitHub
+          </a>
+        </div>
+        <p class="note">
+          This image is an experiment for developers. It is not a production
+          operating system. Physical hardware, a BIOS install, and an encrypted
+          disk were not part of the release check.
+        </p>
+      </section>
+
+      <section id="desktop" class="grid">
+        <article>
+          <h2>Desktop</h2>
+          <p>
+            GNOME 51, Pop Shell tiling, and a dock with the installer, files,
+            Chrome, Brave, and a terminal. The login screen opens with the 02
+            mark, then the normal sign-in is there.
+          </p>
+        </article>
+        <article>
+          <h2>Runtime</h2>
+          <p>
+            <code>02</code> and <code>02-agentd</code> keep a local evidence
+            graph: tree-sitter symbols, git diffs, and SQLite. Agents talk to
+            it over MCP. The model, if you use one, stays outside the OS.
+          </p>
+        </article>
+        <article>
+          <h2>Local</h2>
+          <p>
+            No telemetry, no cloud database, and no account. The live image
+            signs in as <code>live</code> / <code>live</code>. The installed
+            system uses the account you create.
+          </p>
+        </article>
+      </section>
+
+      <section id="try" class="try">
+        <h2>Get the image</h2>
+        <p>
+          The release is three parts plus two checksum files. Join them, then
+          check the sha256 before you boot.
+        </p>
+        <pre><code>cat 02_OS-2026.10.24-x86_64.iso.part* &gt; 02_OS-2026.10.24-x86_64.iso
+sha256sum -c 02_OS.sha256</code></pre>
+        <p>
+          The image sha256 is
+          <code>3602eeb4411c05788467185fe7599c4569b09c9c458dad90c54531a990637713</code>.
+          It was built from
+          <code>deeb705</code>.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <span>02_OS</span>
+      <a href="https://github.com/csy20/02_OS/releases/tag/v2026.10.24">v2026.10.24</a>
+    </footer>
+  </body>
+</html>
