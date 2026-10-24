@@ -18,6 +18,10 @@
     <meta property="og:type" content="website" />
   </head>
   <body>
+    <div id="portal" aria-hidden="true">
+      <canvas></canvas>
+    </div>
+
     <header class="top">
       <a class="brand" href="#top">
         <img src="assets/logo.svg" alt="" width="36" height="33" />
@@ -41,17 +45,14 @@
           requires an account or a cloud model.
         </p>
         <div class="actions">
-          <a class="button" href="https://github.com/csy20/02_OS/releases/tag/v2026.10.24">
-            Download v2026.10.24
+          <a class="button" id="download" href="https://github.com/csy20/02_OS/releases/latest">
+            Download the latest release
           </a>
-          <a class="button quiet" href="https://github.com/csy20/02_OS">
-            GitHub
-          </a>
+          <a class="button" href="https://github.com/csy20/02_OS">GitHub</a>
         </div>
-        <p class="note">
-          This image is an experiment for developers. It is not a production
-          operating system. Physical hardware, a BIOS install, and an encrypted
-          disk were not part of the release check.
+        <p class="note" id="release-status">
+          The button follows the newest GitHub release. Opening this page does
+          not start the download.
         </p>
       </section>
 
@@ -85,23 +86,19 @@
       <section id="try" class="try">
         <h2>Get the image</h2>
         <p>
-          The release is three parts plus two checksum files. Join them, then
-          check the sha256 before you boot.
+          The files below are the latest release. If the image is split, download
+          every part, join them, then check the sha256 before you boot.
         </p>
-        <pre><code>cat 02_OS-2026.10.24-x86_64.iso.part* &gt; 02_OS-2026.10.24-x86_64.iso
-sha256sum -c 02_OS.sha256</code></pre>
-        <p>
-          The image sha256 is
-          <code>3602eeb4411c05788467185fe7599c4569b09c9c458dad90c54531a990637713</code>.
-          It was built from
-          <code>deeb705</code>.
-        </p>
+        <pre><code id="join">The join command appears when the latest release is read.</code></pre>
+        <ul id="files"></ul>
       </section>
     </main>
 
     <footer>
       <span>02_OS</span>
-      <a href="https://github.com/csy20/02_OS/releases/tag/v2026.10.24">v2026.10.24</a>
+      <a href="https://github.com/csy20/02_OS/releases/latest">Latest release</a>
     </footer>
+    <script src="portal.js"></script>
+    <script src="latest.js"></script>
   </body>
 </html>
